@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns = "http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv = "Content-Type" content = "text/html; charset=utf-8"/>
+<title>bondOpacitySliderMini Opacity Slider jQuery plugin</title>
+<style type = "text/css">
+    .container{
+        width: 128px;
+        height: 128px;
+        border: 1px solid;
+    }
+    .bondFrame{
+        position: absolute;
+        width: 128px;
+        height: 128px;
+        opacity: 0.8;
+    }
+</style>
+<script type = "text/javascript" src = "jquery/1.7/jquery-1.7.1.js"></script>
+<script type = "text/javascript" src="../lib/1.0/jquery.bondOpacitySliderMini-1.0.min.js" ></script>
+<script type = "text/javascript">
+	$(document).ready(function(){
+        $("#bondOpacitySlider").bondOpacitySlider({
+            // можно ничего здесь не писать, тогда будут применены значения по умолчанию, те что написаны дальше:
+            autoPlayTime: 3000,   //время между сменой картинок
+            autoPlaySuspend: true,    //останавливать смену картинок при навидении курсора мыши на слайдер
+            activeFrame: 0,    //первая картинка в контейнере, которая показывается в самом начале
+            speedOpacity: "slow",   //время за которое картинка меняет свою прозрачность (можно писать: число, "fast", "normal", "slow" )
+            autoPlayDirect: "next", //направление смены кадров вперед/назад (можно писать: "next","prev" )
+            frame: "bondFrame"    // класс кадра, который меняется через прозрачность
+        });
+    });
+</script>
+</head>
+
+<body>
+<div id = "bondOpacitySlider" class="container">
+    <img class="bondFrame" src="image/3d.png" alt="">
+    <img class="bondFrame" src="image/agent.png" alt="">
+    <img class="bondFrame" src="image/alert.png" alt="">
+    <img class="bondFrame" src="image/antivirus.png" alt="">
+    <img class="bondFrame" src="image/babelfish.png" alt="">
+    <img class="bondFrame" src="image/bell.png" alt="">
+    <img class="bondFrame" src="image/blender.png" alt="">
+</div>
+</body>
+</html>
